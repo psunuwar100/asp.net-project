@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="employeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="empdetail">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="Int32" Nullable="false" />
+    <Property Name="ename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="eaddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contacts" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="employeeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="empdetails" EntityType="Self.empdetail" />
+  </EntityContainer>
+</Schema>
