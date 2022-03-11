@@ -17,6 +17,6 @@ namespace WebApplication1.Models
         public int eid { get; set; }
         public string ename { get; set; }
         public string eaddress { get; set; }
-        public Nullable<int> contacts { get; set; }
+        public Nullable<long> contacts { get; set; }
     }
 }

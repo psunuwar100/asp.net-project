@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="employeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="employeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="empdetails">
           <Key>
             <PropertyRef Name="eid" />
@@ -12,16 +12,18 @@
           <Property Name="eid" Type="int" Nullable="false" />
           <Property Name="ename" Type="varchar" MaxLength="20" />
           <Property Name="eaddress" Type="varchar" MaxLength="20" />
-          <Property Name="contacts" Type="int" />
+          <Property Name="contacts" Type="bigint" />
         </EntityType>
         <EntityContainer Name="employeeModelStoreContainer">
           <EntitySet Name="empdetails" EntityType="Self.empdetails" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="employeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="employeeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="empdetails" EntityType="employeeModel.empdetail" />
+        </EntityContainer>
         <EntityType Name="empdetail">
           <Key>
             <PropertyRef Name="eid" />
@@ -29,11 +31,8 @@
           <Property Name="eid" Type="Int32" Nullable="false" />
           <Property Name="ename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="eaddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="contacts" Type="Int32" />
+          <Property Name="contacts" Type="Int64" />
         </EntityType>
-        <EntityContainer Name="employeeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="empdetails" EntityType="Self.empdetail" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -43,10 +42,10 @@
           <EntitySetMapping Name="empdetails">
             <EntityTypeMapping TypeName="employeeModel.empdetail">
               <MappingFragment StoreEntitySet="empdetails">
-                <ScalarProperty Name="eid" ColumnName="eid" />
-                <ScalarProperty Name="ename" ColumnName="ename" />
-                <ScalarProperty Name="eaddress" ColumnName="eaddress" />
                 <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="eaddress" ColumnName="eaddress" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="eid" ColumnName="eid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

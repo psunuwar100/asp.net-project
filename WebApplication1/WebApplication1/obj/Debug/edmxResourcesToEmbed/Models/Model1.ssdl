@@ -7,7 +7,7 @@
     <Property Name="eid" Type="int" Nullable="false" />
     <Property Name="ename" Type="varchar" MaxLength="20" />
     <Property Name="eaddress" Type="varchar" MaxLength="20" />
-    <Property Name="contacts" Type="int" />
+    <Property Name="contacts" Type="bigint" />
   </EntityType>
   <EntityContainer Name="employeeModelStoreContainer">
     <EntitySet Name="empdetails" EntityType="Self.empdetails" Schema="dbo" store:Type="Tables" />

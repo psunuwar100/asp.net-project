@@ -4,10 +4,10 @@
     <EntitySetMapping Name="empdetails">
       <EntityTypeMapping TypeName="employeeModel.empdetail">
         <MappingFragment StoreEntitySet="empdetails">
-          <ScalarProperty Name="eid" ColumnName="eid" />
-          <ScalarProperty Name="ename" ColumnName="ename" />
-          <ScalarProperty Name="eaddress" ColumnName="eaddress" />
           <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="eaddress" ColumnName="eaddress" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
