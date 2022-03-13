@@ -4,7 +4,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     int SN = 0;
 }
+<style>
+    .table {
+        background: lightblue;
+    }
 
+    label{
+        display: inline-block;
+        width:100px;
+    }
+</style>
 <h2>Employee List</h2>
 <table class="table" border="1">
     <tr>
@@ -16,16 +25,16 @@
 
     </tr>
 
-    @foreach(var data in Model)
-            {
-<tr>
-    <td>@(++SN)</td>
-    <td>@data.eid</td>
-    <td>@data.ename</td>
-    <td>@data.eaddress</td>
-    <td>@data.contacts</td>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++SN)</td>
+            <td>@data.eid</td>
+            <td>@data.ename</td>
+            <td>@data.eaddress</td>
+            <td>@data.contacts</td>
 
-</tr>
-            }
+        </tr>
+    }
 </table>
 

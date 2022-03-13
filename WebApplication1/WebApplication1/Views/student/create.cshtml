@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+       
+    }
+    .btn{
+        width:10%;
+        margin-top:10px;
+    }
+</style>
+
+
+<h2>Details</h2>
+<form action="Savedata">
+    <label>Name:</label>
+    <input type="text" name="sname" />
+    <label>address:</label>
+    <input type="text" name="saddress" />
+    <label>contact:</label>
+    <input type="text" name="contacts" />
+    <button type="submit" name="submit" class="btn btn-success" value="save" >Submit</button>
+</form>
+

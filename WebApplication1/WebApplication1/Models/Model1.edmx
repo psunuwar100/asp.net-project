@@ -14,8 +14,18 @@
           <Property Name="eaddress" Type="varchar" MaxLength="20" />
           <Property Name="contacts" Type="bigint" />
         </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sname" Type="varchar" MaxLength="20" />
+          <Property Name="saddress" Type="varchar" MaxLength="20" />
+          <Property Name="contacts" Type="bigint" />
+        </EntityType>
         <EntityContainer Name="employeeModelStoreContainer">
           <EntitySet Name="empdetails" EntityType="Self.empdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -23,6 +33,7 @@
       <Schema Namespace="employeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="employeeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="empdetails" EntityType="employeeModel.empdetail" />
+          <EntitySet Name="students" EntityType="employeeModel.student" />
         </EntityContainer>
         <EntityType Name="empdetail">
           <Key>
@@ -33,7 +44,16 @@
           <Property Name="eaddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="contacts" Type="Int64" />
         </EntityType>
-      </Schema>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contacts" Type="Int64" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -46,6 +66,16 @@
                 <ScalarProperty Name="eaddress" ColumnName="eaddress" />
                 <ScalarProperty Name="ename" ColumnName="ename" />
                 <ScalarProperty Name="eid" ColumnName="eid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="employeeModel.student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="saddress" ColumnName="saddress" />
+                <ScalarProperty Name="sname" ColumnName="sname" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

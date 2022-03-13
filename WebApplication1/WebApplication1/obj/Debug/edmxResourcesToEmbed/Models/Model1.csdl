@@ -2,6 +2,7 @@
 <Schema Namespace="employeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="employeeEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="empdetails" EntityType="employeeModel.empdetail" />
+    <EntitySet Name="students" EntityType="employeeModel.student" />
   </EntityContainer>
   <EntityType Name="empdetail">
     <Key>
@@ -10,6 +11,15 @@
     <Property Name="eid" Type="Int32" Nullable="false" />
     <Property Name="ename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="eaddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contacts" Type="Int64" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="contacts" Type="Int64" />
   </EntityType>
 </Schema>

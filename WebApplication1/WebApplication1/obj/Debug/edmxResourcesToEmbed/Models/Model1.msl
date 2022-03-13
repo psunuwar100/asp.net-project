@@ -11,5 +11,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="employeeModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="saddress" ColumnName="saddress" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

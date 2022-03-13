@@ -1,0 +1,30 @@
+﻿@model List<WebApplication1.Models.student>
+@{
+    ViewBag.Title = "student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="@Url.Action("create")"> Add new record</a>
+<h2>student</h2>
+<table class="table" border="1">
+    <tr>
+       
+        <th>sid</th>
+        <th>sname</th>
+        <th>saddress</th>
+        <th>contacts</th>
+
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            
+            <td>@data.sid</td>
+            <td>@data.sname</td>
+            <td>@data.saddress</td>
+            <td>@data.contacts</td>
+
+        </tr>
+    }
+</table>
+

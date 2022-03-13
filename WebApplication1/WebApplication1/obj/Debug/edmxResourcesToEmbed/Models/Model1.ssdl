@@ -9,7 +9,17 @@
     <Property Name="eaddress" Type="varchar" MaxLength="20" />
     <Property Name="contacts" Type="bigint" />
   </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sname" Type="varchar" MaxLength="20" />
+    <Property Name="saddress" Type="varchar" MaxLength="20" />
+    <Property Name="contacts" Type="bigint" />
+  </EntityType>
   <EntityContainer Name="employeeModelStoreContainer">
     <EntitySet Name="empdetails" EntityType="Self.empdetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

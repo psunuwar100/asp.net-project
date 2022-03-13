@@ -13,10 +13,11 @@ namespace WebApplication1.Controllers
         employeeEntities db = new employeeEntities();
         
 
-        public ActionResult prashansa()
+        public ActionResult Prashansa()
         {
             List<empdetail> data = db.empdetails.ToList();
             return View(data);
         }
+      
     }
 }
