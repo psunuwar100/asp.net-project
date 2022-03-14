@@ -12,19 +12,22 @@
         <th>sname</th>
         <th>saddress</th>
         <th>contacts</th>
+       
 
     </tr>
 
     @foreach (var data in Model)
     {
-        <tr>
-            
-            <td>@data.sid</td>
-            <td>@data.sname</td>
-            <td>@data.saddress</td>
-            <td>@data.contacts</td>
+<tr>
 
-        </tr>
+    <td>@data.sid</td>
+    <td>@data.sname</td>
+    <td>@data.saddress</td>
+    <td>@data.contacts</td>
+    <td><a href="@Url.Action("Edit", new {id=data.sid})">Edit</a></td>
+    <td><a href="@Url.Action("Delete", new {id=data.sid})">Delete</a></td>
+
+</tr>
     }
 </table>
 

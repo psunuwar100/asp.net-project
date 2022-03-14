@@ -213,6 +213,8 @@
     <Content Include="Views\main\prashansa.cshtml" />
     <Content Include="Views\student\Index.cshtml" />
     <Content Include="Views\student\create.cshtml" />
+    <Content Include="Views\student\Edit.cshtml" />
+    <Content Include="Views\student\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
