@@ -44,16 +44,11 @@ namespace WebApplication1.Controllers
         public ActionResult Delete(int id)
         {
             student data = db.students.Find(id);
-            return View(data);
-        }
-        public ActionResult DeleteData(student student)
-        {
-            student delete = db.students.Find(student.sid);
-            db.students.Remove(delete);
+            db.students.Remove(data);
             db.SaveChanges();
             return RedirectToAction("Index");
-
         }
+       
     }
        
 }
